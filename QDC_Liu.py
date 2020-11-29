@@ -110,6 +110,8 @@ rfc_cv = GridSearchCV(estimator=rfc, param_grid=param_grid,
 rfc_cv.fit(X_train, y_train)
 test_est = rfc_cv.predict(X_test)
 
+print("hello")
+
 print("Accuracy on test data: {:.2f}".format(rfc.score(X_test, y_test)))
 print(metrics.classification_report(test_est, y_test))
 fpr_test, tpr_test, th_test = metrics.roc_curve(test_est, y_test)
@@ -155,3 +157,4 @@ ax2.boxplot(result.importances[perm_sorted_idx].T, vert=False,
             labels=df_num.feature_names[perm_sorted_idx])
 fig.tight_layout()
 plt.show()
+
